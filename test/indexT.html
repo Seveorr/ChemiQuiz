@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MiniJoc - Taula Periòdica</title>
+    <link rel="stylesheet" href="styleT.css" />
+  </head>
+  <body>
+    <h1>ChemiQuiz: Qüestionaris</h1>
+
+    <!-- Formulari inicial -->
+    <section id="formulari">
+      <form id="configuracioJoc">
+        <h3>
+          Respon les preguntes tipus test sobre la taula Periòdica.
+        </h3>
+        <p>
+          En aquest mode podràs millorar els teus coneixements sobre la Taula Periòdica.
+        </p>
+        <br />
+
+        <label>
+          Dificultat:
+          <select id="dificultat">
+            <option value="facil">Fàcil (10 preguntes)</option>
+            <option value="mitja">Mitjà (15 preguntes)</option>
+            <option value="dificil">Difícil (20 preguntes)</option>
+          </select>
+        </label>
+        <br /><br />
+
+        <button type="submit">Començar joc</button>
+      </form>
+    </section>
+
+    <!-- Zona del joc -->
+    <section id="joc" style="display: none">
+      <div id="crono"></div>
+      <p id="score">Puntuació: 0</p>
+      <p id="progress">Pregunta 0 de 0</p>
+      <p id="question">Pregunta apareixerà aquí</p>
+      <div id="options"></div>
+      <p id="feedback"></p>
+    </section>
+
+    <!-- Resultats -->
+    <section id="resultat" style="display: none">
+      <h2>Resultat Final</h2>
+      <p id="missatgeFinal"></p>
+      <button onclick="reiniciarJoc()">Tornar a jugar</button>
+    </section>
+
+    <script src="scriptT.js"></script>
+  </body>
+</html>
