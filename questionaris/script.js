@@ -262,6 +262,23 @@ function acabarJoc() {
   joc.style.display = "none";
   resultat.style.display = "block";
   missatgeFinal.textContent = `Has aconseguit ${score} de ${totalQuestions} preguntes correctes.`;
+
+  $.ajax({
+    url: "https://fun.codelearn.cat/hackathon/game/finalize",
+    method: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({
+      game_id: game_id,
+      data: {},
+      score: score,
+    }),
+    success: function (data, textStatus, jqXHR) {
+      alert("Informació guardada correctament");
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      alert("Error en finalitzar de la partida: " + textStatus);
+    },
+  });
 }
 
 function reiniciarJoc() {
