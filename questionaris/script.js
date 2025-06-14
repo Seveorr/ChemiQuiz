@@ -5,16 +5,16 @@ const questions = [
       "Dmitri Mendeléiev",
       "Marie Curie",
       "Isaac Newton",
-      "Albert Einstein"
+      "Albert Einstein",
     ],
     respostaCorrecta: "Dmitri Mendeléiev",
-    tipus: "creador"
+    tipus: "creador",
   },
   {
     pregunta: "Quants elements té la taula periòdica actualment?",
     opcions: ["118", "120", "112", "102"],
     respostaCorrecta: "118",
-    tipus: "totalElements"
+    tipus: "totalElements",
   },
   {
     pregunta: "Quina propietat indica el nombre d'electrons en l'última capa?",
@@ -22,63 +22,76 @@ const questions = [
       "Número atòmic",
       "Massa atòmica",
       "Electronegativitat",
-      "Nombre d'oxidació"
+      "Nombre d'oxidació",
     ],
     respostaCorrecta: "Número atòmic",
-    tipus: "propietat"
+    tipus: "propietat",
   },
   {
     pregunta: "Quina és la unitat utilitzada per mesurar la massa atòmica?",
     opcions: ["Unitat de massa atòmica (u)", "Gram", "Mol", "Newton"],
     respostaCorrecta: "Unitat de massa atòmica (u)",
-    tipus: "propietat"
+    tipus: "propietat",
   },
   {
     pregunta: "Quina família d'elements són coneguts com a gasos nobles?",
-    opcions: ["He, Ne, Ar, Kr, Xe, Rn", "H, Li, Na, K", "O, S, Se, Te", "Fe, Co, Ni"],
+    opcions: [
+      "He, Ne, Ar, Kr, Xe, Rn",
+      "H, Li, Na, K",
+      "O, S, Se, Te",
+      "Fe, Co, Ni",
+    ],
     respostaCorrecta: "He, Ne, Ar, Kr, Xe, Rn",
-    tipus: "familia"
+    tipus: "familia",
   },
   {
     pregunta: "Quin element és un metall alcalí-terrós?",
     opcions: ["Calci", "Carboni", "Neó", "Clor"],
     respostaCorrecta: "Calci",
-    tipus: "familia"
+    tipus: "familia",
   },
   {
     pregunta: "Quina és la càrrega típica d'un ió de sodi (Na)?",
     opcions: ["+1", "-1", "+2", "0"],
     respostaCorrecta: "+1",
-    tipus: "propietat"
+    tipus: "propietat",
   },
   {
-    pregunta: "Quina és la característica principal dels elements de la família dels halògens?",
+    pregunta:
+      "Quina és la característica principal dels elements de la família dels halògens?",
     opcions: [
       "Són molt reactius i tenen 7 electrons en la seva capa externa",
       "Són gasos nobles",
       "Són metalls alcalins",
-      "Són metalls de transició"
+      "Són metalls de transició",
     ],
-    respostaCorrecta: "Són molt reactius i tenen 7 electrons en la seva capa externa",
-    tipus: "familia"
+    respostaCorrecta:
+      "Són molt reactius i tenen 7 electrons en la seva capa externa",
+    tipus: "familia",
   },
   {
     pregunta: "Quin element és un metall de transició?",
     opcions: ["Ferro", "Oxigen", "Neó", "Sodi"],
     respostaCorrecta: "Ferro",
-    tipus: "familia"
+    tipus: "familia",
   },
   {
     pregunta: "Quin any va publicar Dmitri Mendeléiev la seva taula periòdica?",
     opcions: ["1869", "1905", "1776", "1890"],
     respostaCorrecta: "1869",
-    tipus: "historia"
+    tipus: "historia",
   },
   {
-    pregunta: "Quina propietat es representa per la capacitat d'un element d'atraure electrons?",
-    opcions: ["Electronegativitat", "Número atòmic", "Massa atòmica", "Radio atòmic"],
+    pregunta:
+      "Quina propietat es representa per la capacitat d'un element d'atraure electrons?",
+    opcions: [
+      "Electronegativitat",
+      "Número atòmic",
+      "Massa atòmica",
+      "Radio atòmic",
+    ],
     respostaCorrecta: "Electronegativitat",
-    tipus: "propietat"
+    tipus: "propietat",
   },
   {
     pregunta: "Quina de les següents afirmacions és certa sobre els metalls?",
@@ -86,22 +99,22 @@ const questions = [
       "Són bons conductors de calor i electricitat",
       "Són gasos inerts",
       "Tenen poca densitat",
-      "No formen aliatges"
+      "No formen aliatges",
     ],
     respostaCorrecta: "Són bons conductors de calor i electricitat",
-    tipus: "propietat"
+    tipus: "propietat",
   },
   {
     pregunta: "Quin és l’element més lleuger de la taula periòdica?",
     opcions: ["Hidrogen", "Hel·li", "Liti", "Carboni"],
     respostaCorrecta: "Hidrogen",
-    tipus: "propietat"
+    tipus: "propietat",
   },
   {
     pregunta: "Quins elements són gasos nobles?",
     opcions: ["He, Ne, Ar, Kr, Xe, Rn", "H, Li, Na", "O, F, Cl", "Fe, Cu, Zn"],
     respostaCorrecta: "He, Ne, Ar, Kr, Xe, Rn",
-    tipus: "familia"
+    tipus: "familia",
   },
   {
     pregunta: "Què indica el nombre atòmic d'un element?",
@@ -109,25 +122,33 @@ const questions = [
       "El nombre de protons del seu nucli",
       "La massa total de l’àtom",
       "El nombre d’electrons externs",
-      "La càrrega de l’ió"
+      "La càrrega de l’ió",
     ],
     respostaCorrecta: "El nombre de protons del seu nucli",
-    tipus: "propietat"
+    tipus: "propietat",
   },
   {
     pregunta: "Quins elements formen la família dels alcalins?",
-    opcions: ["H, Li, Na, K, Rb, Cs, Fr", "He, Ne, Ar", "Fe, Co, Ni", "O, S, Se"],
+    opcions: [
+      "H, Li, Na, K, Rb, Cs, Fr",
+      "He, Ne, Ar",
+      "Fe, Co, Ni",
+      "O, S, Se",
+    ],
     respostaCorrecta: "H, Li, Na, K, Rb, Cs, Fr",
-    tipus: "familia"
-  }
+    tipus: "familia",
+  },
 ];
-
 
 let score = 0;
 let totalQuestions = 10;
 let questionsAsked = 0;
 let timerInterval = null;
 let questionsPool = [];
+
+let game_id = 0;
+let seed = 0;
+let intervalStatus = null;
 
 const formulari = document.getElementById("formulari");
 const joc = document.getElementById("joc");
@@ -142,7 +163,7 @@ const missatgeFinal = document.getElementById("missatgeFinal");
 
 function shuffleArray(array) {
   return array
-    .map((value) => ({ value, sort: Math.random() }))
+    .map((value) => ({ value, sort: Math.random(seed) }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
 }
@@ -237,6 +258,7 @@ function nextQuestionOrEnd() {
 
 function acabarJoc() {
   clearInterval(timerInterval);
+  stopSaveStatus();
   joc.style.display = "none";
   resultat.style.display = "block";
   missatgeFinal.textContent = `Has aconseguit ${score} de ${totalQuestions} preguntes correctes.`;
@@ -254,32 +276,79 @@ function reiniciarJoc() {
   crono.textContent = "";
 }
 
-document
-  .getElementById("configuracioJoc")
-  .addEventListener("submit", (e) => {
-    e.preventDefault();
+document.getElementById("configuracioJoc").addEventListener("submit", (e) => {
+  e.preventDefault();
+  newGameRequest();
+  startSaveStatus();
 
-    const dificultat = document.getElementById("dificultat").value;
-    if (dificultat === "facil") totalQuestions = 10;
-    else if (dificultat === "mitja") totalQuestions = 15;
-    else if (dificultat === "dificil") totalQuestions = 20;
+  const dificultat = document.getElementById("dificultat").value;
+  if (dificultat === "facil") totalQuestions = 10;
+  else if (dificultat === "mitja") totalQuestions = 15;
+  else if (dificultat === "dificil") totalQuestions = 20;
 
-    // Si demanes més preguntes de les que tenim, ajustem
-    if (totalQuestions > questions.length) {
-      totalQuestions = questions.length;
-      alert(`Només hi ha ${questions.length} preguntes disponibles. El joc es configurarà amb aquesta quantitat.`);
-    }
+  // Si demanes més preguntes de les que tenim, ajustem
+  if (totalQuestions > questions.length) {
+    totalQuestions = questions.length;
+    alert(
+      `Només hi ha ${questions.length} preguntes disponibles. El joc es configurarà amb aquesta quantitat.`
+    );
+  }
 
-    questionsPool = shuffleArray(questions).slice(0, totalQuestions);
+  questionsPool = shuffleArray(questions).slice(0, totalQuestions);
 
-    formulari.style.display = "none";
-    resultat.style.display = "none";
-    joc.style.display = "block";
+  formulari.style.display = "none";
+  resultat.style.display = "none";
+  joc.style.display = "block";
 
-    score = 0;
-    questionsAsked = 0;
-    scoreDisplay.textContent = `Puntuació: 0`;
-    progressDisplay.textContent = `Pregunta 0 de 0`;
-    feedback.textContent = "";
-    getNewQuestion();
+  score = 0;
+  questionsAsked = 0;
+  scoreDisplay.textContent = `Puntuació: 0`;
+  progressDisplay.textContent = `Pregunta 0 de 0`;
+  feedback.textContent = "";
+  getNewQuestion();
+});
+
+//requests to the server
+function newGameRequest() {
+  $.ajax({
+    url: "https://fun.codelearn.cat/hackathon/game/new",
+    method: "GET",
+    success: function (data, textStatus, jqXHR) {
+      if (jqXHR.status === 200) {
+        game_id = data["game_id"];
+        seed = data["seed"];
+      } else {
+        alert("Error en la creació de la partida: status " + jqXHR.status);
+        reiniciarJoc();
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      alert("Error en la creació de la partida: " + textStatus);
+      reiniciarJoc();
+    },
   });
+}
+function startSaveStatus() {
+  if (intervalStatus) return; // si ja està corrent no fem res
+  intervalStatus = setInterval(() => {
+    $.ajax({
+      url: "https://fun.codelearn.cat/hackathon/game/store_progress",
+      method: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({
+        game_id: game_id,
+        data: { preguntesRespongudes: questionsAsked },
+      }),
+      success: function (data, textStatus, jqXHR) {
+        console.log("Informació guardada correctament");
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log("Error en finalitzar de la partida: " + textStatus);
+      },
+    });
+  }, 15000);
+}
+function stopSaveStatus() {
+  clearInterval(intervalStatus);
+  intervalStatus = null;
+}
