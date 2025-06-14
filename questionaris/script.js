@@ -8,7 +8,13 @@ const questions = [
       "Albert Einstein",
     ],
     respostaCorrecta: "Dmitri Mendeléiev",
-    tipus: "historia",
+    tipus: "història",
+  },
+  {
+    pregunta: "Quin any va publicar Dmitri Mendeléiev la seva taula periòdica?",
+    opcions: ["1869", "1905", "1776", "1890"],
+    respostaCorrecta: "1869",
+    tipus: "història",
   },
   {
     pregunta: "Quants elements té la taula periòdica actualment?",
@@ -17,21 +23,16 @@ const questions = [
     tipus: "elements",
   },
   {
-    pregunta: "Quina propietat indica el nombre d'electrons en l'última capa?",
-    opcions: [
-      "Número atòmic",
-      "Massa atòmica",
-      "Electronegativitat",
-      "Nombre d'oxidació",
-    ],
-    respostaCorrecta: "Número atòmic",
-    tipus: "propietat",
+    pregunta: "Quin és l’element més lleuger de la taula periòdica?",
+    opcions: ["Hidrogen", "Hel·li", "Liti", "Carboni"],
+    respostaCorrecta: "Hidrogen",
+    tipus: "elements",
   },
   {
-    pregunta: "Quina és la unitat utilitzada per mesurar la massa atòmica?",
-    opcions: ["Unitat de massa atòmica (u)", "Gram", "Mol", "Newton"],
-    respostaCorrecta: "Unitat de massa atòmica (u)",
-    tipus: "propietat",
+    pregunta: "Quin és l'element químic més abundant a l'univers?",
+    opcions: ["Hidrogen", "Oxigen", "Carboni", "Hel·li"],
+    respostaCorrecta: "Hidrogen",
+    tipus: "elements",
   },
   {
     pregunta: "Quina família d'elements són coneguts com a gasos nobles?",
@@ -51,83 +52,6 @@ const questions = [
     tipus: "familia",
   },
   {
-    pregunta: "Quina és la càrrega típica d'un ió de sodi (Na)?",
-    opcions: ["+1", "-1", "+2", "0"],
-    respostaCorrecta: "+1",
-    tipus: "propietat",
-  },
-  {
-    pregunta:
-      "Quina és la característica principal dels elements de la família dels halògens?",
-    opcions: [
-      "Són molt reactius i tenen 7 electrons en la seva capa externa",
-      "Són gasos nobles",
-      "Són metalls alcalins",
-      "Són metalls de transició",
-    ],
-    respostaCorrecta:
-      "Són molt reactius i tenen 7 electrons en la seva capa externa",
-    tipus: "familia",
-  },
-  {
-    pregunta: "Quin element és un metall de transició?",
-    opcions: ["Ferro", "Oxigen", "Neó", "Sodi"],
-    respostaCorrecta: "Ferro",
-    tipus: "familia",
-  },
-  {
-    pregunta: "Quin any va publicar Dmitri Mendeléiev la seva taula periòdica?",
-    opcions: ["1869", "1905", "1776", "1890"],
-    respostaCorrecta: "1869",
-    tipus: "historia",
-  },
-  {
-    pregunta:
-      "Quina propietat es representa per la capacitat d'un element d'atraure electrons?",
-    opcions: [
-      "Electronegativitat",
-      "Número atòmic",
-      "Massa atòmica",
-      "Radio atòmic",
-    ],
-    respostaCorrecta: "Electronegativitat",
-    tipus: "propietat",
-  },
-  {
-    pregunta: "Quina de les següents afirmacions és certa sobre els metalls?",
-    opcions: [
-      "Són bons conductors de calor i electricitat",
-      "Són gasos inerts",
-      "Tenen poca densitat",
-      "No formen aliatges",
-    ],
-    respostaCorrecta: "Són bons conductors de calor i electricitat",
-    tipus: "propietat",
-  },
-  {
-    pregunta: "Quin és l’element més lleuger de la taula periòdica?",
-    opcions: ["Hidrogen", "Hel·li", "Liti", "Carboni"],
-    respostaCorrecta: "Hidrogen",
-    tipus: "propietat",
-  },
-  {
-    pregunta: "Quins elements són gasos nobles?",
-    opcions: ["He, Ne, Ar, Kr, Xe, Rn", "H, Li, Na", "O, F, Cl", "Fe, Cu, Zn"],
-    respostaCorrecta: "He, Ne, Ar, Kr, Xe, Rn",
-    tipus: "familia",
-  },
-  {
-    pregunta: "Què indica el nombre atòmic d'un element?",
-    opcions: [
-      "El nombre de protons del seu nucli",
-      "La massa total de l’àtom",
-      "El nombre d’electrons externs",
-      "La càrrega de l’ió",
-    ],
-    respostaCorrecta: "El nombre de protons del seu nucli",
-    tipus: "propietat",
-  },
-  {
     pregunta: "Quins elements formen la família dels alcalins?",
     opcions: [
       "H, Li, Na, K, Rb, Cs, Fr",
@@ -139,145 +63,16 @@ const questions = [
     tipus: "familia",
   },
   {
-    pregunta: "Quin és l'element químic més abundant a l'univers?",
-    opcions: ["Hidrogen", "Oxigen", "Carboni", "Hel·li"],
-    respostaCorrecta: "Hidrogen",
-    tipus: "composició",
-  },
-  {
-    pregunta:
-      "Quin metall s'utilitza principalment en la fabricació de bateries de ions de liti?",
-    opcions: ["Liti", "Plom", "Níquel", "Coure"],
-    respostaCorrecta: "Liti",
-    tipus: "ús",
-  },
-  {
-    pregunta: "Quin element és imprescindible en la formació d’hemoglobina?",
-    opcions: ["Ferro", "Sodi", "Calci", "Potassi"],
-    respostaCorrecta: "Ferro",
-    tipus: "bioquímica",
-  },
-  {
-    pregunta:
-      "Quin element és conegut per la seva gran resistència a la corrosió?",
-    opcions: ["Or", "Tità", "Ferro", "Plata"],
-    respostaCorrecta: "Tità",
-    tipus: "propietat",
-  },
-  {
-    pregunta: "Quina és la fórmula química de l’aigua?",
-    opcions: ["H₂O", "CO₂", "O₂", "NaCl"],
-    respostaCorrecta: "H₂O",
-    tipus: "química",
-  },
-  {
-    pregunta:
-      "Quin grup d’elements es troba a la columna 1 de la taula periòdica?",
-    opcions: [
-      "Metalls alcalins",
-      "Halògens",
-      "Gasos nobles",
-      "Metalls de transició",
-    ],
-    respostaCorrecta: "Metalls alcalins",
-    tipus: "familia",
-  },
-  {
-    pregunta: "Quin és l’element químic que es troba en els diamants?",
-    opcions: ["Carboni", "Silici", "Oxigen", "Ferro"],
-    respostaCorrecta: "Carboni",
-    tipus: "composició",
-  },
-  {
-    pregunta: "Quin metall s’utilitza sovint en circuits electrònics?",
-    opcions: ["Coure", "Plata", "Ferro", "Níquel"],
-    respostaCorrecta: "Coure",
-    tipus: "ús",
-  },
-  {
     pregunta: "Quin element químic és essencial en la formació dels ossos?",
     opcions: ["Calci", "Fòsfor", "Magnesi", "Potassi"],
     respostaCorrecta: "Calci",
     tipus: "bioquímica",
   },
   {
-    pregunta: "Quin element és gasós a temperatura ambient?",
-    opcions: ["Oxigen", "Ferro", "Silici", "Coure"],
-    respostaCorrecta: "Oxigen",
-    tipus: "propietat",
-  },
-  {
-    pregunta: "Quin és l'element químic més dens?",
-    opcions: ["Osmí", "Platina", "Plom", "Urani"],
-    respostaCorrecta: "Osmí",
-    tipus: "propietat",
-  },
-  {
-    pregunta: "Quin metall s’utilitza habitualment en la fabricació de joies?",
-    opcions: ["Or", "Alumini", "Ferro", "Níquel"],
-    respostaCorrecta: "Or",
-    tipus: "ús",
-  },
-  {
-    pregunta:
-      "Quina propietat química fa que un element sigui un bon conductor elèctric?",
-    opcions: [
-      "Baixa resistència",
-      "Alta densitat",
-      "Gran duresa",
-      "Gran massa atòmica",
-    ],
-    respostaCorrecta: "Baixa resistència",
-    tipus: "propietat",
-  },
-  {
-    pregunta: "Quin element s'utilitza com a combustible en centrals nuclears?",
-    opcions: ["Urani", "Plutoni", "Tori", "Neptuni"],
-    respostaCorrecta: "Urani",
-    tipus: "ús",
-  },
-  {
-    pregunta: "Quin grup d’elements té una valència de -1?",
-    opcions: ["Halògens", "Metalls alcalins", "Gasos nobles", "Lantanidis"],
-    respostaCorrecta: "Halògens",
-    tipus: "familia",
-  },
-  {
-    pregunta: "Quin és el metall més lleuger?",
-    opcions: ["Liti", "Sodi", "Alumini", "Magnesi"],
-    respostaCorrecta: "Liti",
-    tipus: "propietat",
-  },
-  {
-    pregunta: "Quin element químic es troba en el clor de les piscines?",
-    opcions: ["Clor", "Fluor", "Sodi", "Calci"],
-    respostaCorrecta: "Clor",
-    tipus: "ús",
-  },
-  {
-    pregunta: "Quin element s'utilitza en la fabricació de vidres resistents?",
-    opcions: ["Silici", "Carboni", "Ferro", "Alumini"],
-    respostaCorrecta: "Silici",
-    tipus: "ús",
-  },
-  {
-    pregunta: "Quin element químic és fonamental en la fotosíntesi?",
-    opcions: ["Magnesi", "Oxigen", "Carboni", "Fòsfor"],
-    respostaCorrecta: "Magnesi",
+    pregunta: "Quin element és imprescindible en la formació d’hemoglobina?",
+    opcions: ["Ferro", "Sodi", "Calci", "Potassi"],
+    respostaCorrecta: "Ferro",
     tipus: "bioquímica",
-  },
-  {
-    pregunta: "Quin element té el punt de fusió més baix?",
-    opcions: ["Hidrogen", "Hel·li", "Neó", "Fluor"],
-    respostaCorrecta: "Hel·li",
-    tipus: "propietat",
-  },
-  {
-    pregunta:
-      "Quin element s'utilitza en la fabricació de làmpades fluorescents?",
-    opcions: ["Mercuri", "Neó", "Xenó", "Radó"],
-    respostaCorrecta: "Mercuri",
-    tipus: "ús",
   },
   {
     pregunta: "Quin element químic és essencial en les dents?",
@@ -292,23 +87,15 @@ const questions = [
     tipus: "propietat",
   },
   {
-    pregunta: "Quin element químic es troba a la sal de taula?",
-    opcions: ["Sodi", "Potassi", "Magnesi", "Calci"],
-    respostaCorrecta: "Sodi",
-    tipus: "composició",
-  },
-  {
-    pregunta: "Quin és el metall més resistent a l'oxidació?",
-    opcions: ["Tità", "Plata", "Ferro", "Níquel"],
-    respostaCorrecta: "Tità",
+    pregunta: "Quina propietat indica el nombre d'electrons en l'última capa?",
+    opcions: [
+      "Número atòmic",
+      "Massa atòmica",
+      "Electronegativitat",
+      "Nombre d'oxidació",
+    ],
+    respostaCorrecta: "Número atòmic",
     tipus: "propietat",
-  },
-  {
-    pregunta:
-      "Quin element es troba en la major part de les bateries recarregables?",
-    opcions: ["Liti", "Plom", "Cadmi", "Níquel"],
-    respostaCorrecta: "Liti",
-    tipus: "ús",
   },
   {
     pregunta:
@@ -323,10 +110,292 @@ const questions = [
     tipus: "propietat",
   },
   {
-    pregunta: "Quin element és radioactiu de manera natural?",
-    opcions: ["Urani", "Tori", "Plutoni", "Radó"],
+    pregunta: "Quina és la fórmula química de l’aigua?",
+    opcions: ["H₂O", "CO₂", "O₂", "NaCl"],
+    respostaCorrecta: "H₂O",
+    tipus: "química",
+  },
+  {
+    pregunta: "Quin element s’utilitza com a combustible en centrals nuclears?",
+    opcions: ["Urani", "Plutoni", "Tori", "Neptuni"],
     respostaCorrecta: "Urani",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin element químic es troba a la sal de taula?",
+    opcions: ["Sodi", "Potassi", "Magnesi", "Calci"],
+    respostaCorrecta: "Sodi",
+    tipus: "composició",
+  },
+  {
+    pregunta: "Quin metall s’utilitza sovint en circuits electrònics?",
+    opcions: ["Coure", "Plata", "Ferro", "Níquel"],
+    respostaCorrecta: "Coure",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin metall s’utilitza habitualment en la fabricació de joies?",
+    opcions: ["Or", "Alumini", "Ferro", "Níquel"],
+    respostaCorrecta: "Or",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin és el metall més resistent a la corrosió?",
+    opcions: ["Tità", "Plata", "Ferro", "Níquel"],
+    respostaCorrecta: "Tità",
     tipus: "propietat",
+  },
+  {
+    pregunta: "Quin element és gasós a temperatura ambient?",
+    opcions: ["Oxigen", "Ferro", "Silici", "Coure"],
+    respostaCorrecta: "Oxigen",
+    tipus: "propietat",
+  },
+  {
+    pregunta:
+      "Quina propietat química fa que un element sigui un bon conductor elèctric?",
+    opcions: [
+      "Baixa resistència",
+      "Alta densitat",
+      "Gran duresa",
+      "Gran massa atòmica",
+    ],
+    respostaCorrecta: "Baixa resistència",
+    tipus: "propietat",
+  },
+  {
+    pregunta:
+      "Quin element químic s’utilitza en la fabricació de microprocessadors?",
+    opcions: ["Silici", "Ferro", "Coure", "Alumini"],
+    respostaCorrecta: "Silici",
+    tipus: "ús",
+  },
+  {
+    pregunta:
+      "Quin element és fonamental per a la vida i es troba en totes les biomolècules?",
+    opcions: ["Carboni", "Oxigen", "Nitrogen", "Calci"],
+    respostaCorrecta: "Carboni",
+    tipus: "bioquímica",
+  },
+  {
+    pregunta:
+      "Quina és la propietat que determina el volum d’un element químic?",
+    opcions: [
+      "Densitat",
+      "Massa atòmica",
+      "Electronegativitat",
+      "Número atòmic",
+    ],
+    respostaCorrecta: "Densitat",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quin metall té el major punt de fusió?",
+    opcions: ["Tungstè", "Osmí", "Ferro", "Platina"],
+    respostaCorrecta: "Tungstè",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quina és la principal aplicació del neó?",
+    opcions: [
+      "Llum en rètols publicitaris",
+      "Fabricació de bateries",
+      "Producció d'acer",
+      "Catalitzador químic",
+    ],
+    respostaCorrecta: "Llum en rètols publicitaris",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin element químic s’utilitza en la fabricació de paper?",
+    opcions: ["Clor", "Carboni", "Sulfur", "Calci"],
+    respostaCorrecta: "Clor",
+    tipus: "ús",
+  },
+  {
+    pregunta:
+      "Quin element és essencial en la transmissió de senyals nerviosos?",
+    opcions: ["Sodi", "Calci", "Magnesi", "Potassi"],
+    respostaCorrecta: "Sodi",
+    tipus: "bioquímica",
+  },
+  {
+    pregunta:
+      "Quina és la propietat que permet als metalls ser estirats en fils?",
+    opcions: [
+      "Ductilitat",
+      "Densitat",
+      "Maleabilitat",
+      "Resistència elèctrica",
+    ],
+    respostaCorrecta: "Ductilitat",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quin element s’utilitza per esterilitzar l’aigua?",
+    opcions: ["Clor", "Fluor", "Oxigen", "Nitrogen"],
+    respostaCorrecta: "Clor",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin gas és conegut com a ‘gas hilarant’?",
+    opcions: ["Òxid de nitrogen", "Neó", "Xenó", "Argó"],
+    respostaCorrecta: "Òxid de nitrogen",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quin element químic es troba en la majoria de fertilitzants?",
+    opcions: ["Nitrogen", "Fòsfor", "Potassi", "Calci"],
+    respostaCorrecta: "Nitrogen",
+    tipus: "ús",
+  },
+  {
+    pregunta:
+      "Quina és la propietat que fa que un element sigui resistent a la fractura?",
+    opcions: ["Duresa", "Densitat", "Conductivitat", "Maleabilitat"],
+    respostaCorrecta: "Duresa",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quin element químic és fonamental per a la producció de vidre?",
+    opcions: ["Silici", "Sodi", "Coure", "Plata"],
+    respostaCorrecta: "Silici",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin metall s’utilitza principalment en la fabricació d’avions?",
+    opcions: ["Alumini", "Ferro", "Níquel", "Coure"],
+    respostaCorrecta: "Alumini",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin element es coneix com a ‘metall líquid’?",
+    opcions: ["Mercuri", "Plom", "Sodi", "Bismut"],
+    respostaCorrecta: "Mercuri",
+    tipus: "propietat",
+  },
+  {
+    pregunta:
+      "Quina és la propietat que fa que un element sigui un bon aïllant tèrmic?",
+    opcions: [
+      "Baixa conductivitat tèrmica",
+      "Alta densitat",
+      "Alta massa atòmica",
+      "Gran resistència elèctrica",
+    ],
+    respostaCorrecta: "Baixa conductivitat tèrmica",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quin element químic es fa servir en les bateries recarregables?",
+    opcions: ["Liti", "Plom", "Cadmi", "Níquel"],
+    respostaCorrecta: "Liti",
+    tipus: "ús",
+  },
+  {
+    pregunta:
+      "Quina és la propietat que determina la facilitat amb què un metall es pot tallar?",
+    opcions: ["Duresa", "Ductilitat", "Resistència mecànica", "Elasticitat"],
+    respostaCorrecta: "Duresa",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quin element s’utilitza com a gas protector en la soldadura?",
+    opcions: ["Argó", "Neó", "Xenó", "Radó"],
+    respostaCorrecta: "Argó",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin element és fonamental en la fabricació de semiconductors?",
+    opcions: ["Silici", "Carboni", "Coure", "Plata"],
+    respostaCorrecta: "Silici",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin metall s'utilitza en la fabricació de monedes?",
+    opcions: ["Níquel", "Ferro", "Alumini", "Or"],
+    respostaCorrecta: "Níquel",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin element és essencial en la síntesi de proteïnes?",
+    opcions: ["Nitrogen", "Oxigen", "Sofre", "Fòsfor"],
+    respostaCorrecta: "Nitrogen",
+    tipus: "bioquímica",
+  },
+  {
+    pregunta: "Quin element es troba en la sang i transporta oxigen?",
+    opcions: ["Ferro", "Calci", "Sodi", "Potassi"],
+    respostaCorrecta: "Ferro",
+    tipus: "bioquímica",
+  },
+  {
+    pregunta: "Quina propietat química fa que un metall sigui maleable?",
+    opcions: ["Maleabilitat", "Duresa", "Electronegativitat", "Densitat"],
+    respostaCorrecta: "Maleabilitat",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quin és l'únic metall que és líquid a temperatura ambient?",
+    opcions: ["Mercuri", "Plom", "Alumini", "Zinc"],
+    respostaCorrecta: "Mercuri",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quin element és fonamental per a la vida marina?",
+    opcions: ["Oxigen", "Carboni", "Sofre", "Calci"],
+    respostaCorrecta: "Oxigen",
+    tipus: "bioquímica",
+  },
+  {
+    pregunta:
+      "Quina és la propietat que indica la facilitat amb què un element guanya electrons?",
+    opcions: ["Electronegativitat", "Número atòmic", "Duresa", "Massa atòmica"],
+    respostaCorrecta: "Electronegativitat",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quin gas és el més abundant a l’atmosfera terrestre?",
+    opcions: ["Nitrogen", "Oxigen", "Argó", "Diòxid de carboni"],
+    respostaCorrecta: "Nitrogen",
+    tipus: "elements",
+  },
+  {
+    pregunta: "Quin metall s’utilitza per fabricar cables elèctrics?",
+    opcions: ["Coure", "Ferro", "Alumini", "Níquel"],
+    respostaCorrecta: "Coure",
+    tipus: "ús",
+  },
+  {
+    pregunta:
+      "Quina propietat defineix la temperatura en què un element passa de sòlid a líquid?",
+    opcions: ["Punt de fusió", "Densitat", "Duresa", "Número atòmic"],
+    respostaCorrecta: "Punt de fusió",
+    tipus: "propietat",
+  },
+  {
+    pregunta: "Quin element és fonamental en la fotosíntesi?",
+    opcions: ["Magnesi", "Oxigen", "Fòsfor", "Carboni"],
+    respostaCorrecta: "Magnesi",
+    tipus: "bioquímica",
+  },
+  {
+    pregunta: "Quin element químic s’utilitza en la fabricació de miralls?",
+    opcions: ["Plata", "Alumini", "Níquel", "Ferro"],
+    respostaCorrecta: "Plata",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin metall es troba en els cables de fibra òptica?",
+    opcions: ["Germani", "Coure", "Silici", "Or"],
+    respostaCorrecta: "Germani",
+    tipus: "ús",
+  },
+  {
+    pregunta: "Quin element es troba en les piles alcalines?",
+    opcions: ["Zinc", "Liti", "Níquel", "Plom"],
+    respostaCorrecta: "Zinc",
+    tipus: "ús",
   },
 ];
 
