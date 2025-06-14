@@ -215,7 +215,7 @@ function getNewQuestion() {
   optionsDiv.innerHTML = "";
   feedback.textContent = "";
 
-  current.opcions.forEach((opcio) => {
+  shuffleArray(current.opcions).forEach((opcio) => {
     const btn = document.createElement("button");
     btn.textContent = opcio;
     btn.className = "option";
