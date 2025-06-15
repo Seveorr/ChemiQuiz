@@ -12,6 +12,8 @@ body {
   color: rgb(0, 0, 0); /* Aquest color és pel text del body per defecte, si es fa servir. El text dels elements (h1, form, etc.) es sobrescriurà. */
 }
 
+/* S'ha ELIMINAT completament el bloc 'body::before' que creava la foscor del fons */
+
 h1 {
   color: #2563eb; /* Blau suau unificat */
   font-size: 36px;
@@ -22,76 +24,119 @@ h1 {
   text-shadow: none; /* Sense ombra de text unificat */
 }
 
-/* Estils per al formulari de configuració del joc (VeritatOFals.html) */
-#formulari-VeritatOFals form {
+form {
   background: #ffffff;
-  display: inline-block;
+  display: inline-block; /* Unificat per centrar el formulari */
   padding: 24px 32px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombra unificada */
   transition: box-shadow 0.3s ease;
-  max-width: 320px;
-  width: 100%;
-  margin: auto;
+  max-width: 320px; /* Max-width unificat */
+  width: 100%; /* Amplada unificada */
+  margin: auto; /* Manté el marge automàtic per centrar */
 }
 
-#formulari-VeritatOFals form:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+form:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Ombra hover unificada */
 }
 
-#formulari-VeritatOFals label {
-  cursor: pointer;
+label {
+  cursor: pointer; /* Cursor unificat */
   font-weight: 600;
-  color: #374151;
-  user-select: none;
-  display: flex;
-  align-items: center;
+  color: #374151; /* Color de text unificat */
+  user-select: none; /* User-select unificat */
+  display: flex; /* Display flex per layout unificat */
+  align-items: center; /* Centrat vertical unificat */
   margin-bottom: 12px;
-  gap: 8px;
+  gap: 8px; /* Gap unificat */
   font-size: 16px;
-  text-align: left;
+  text-align: left; /* Manté text-align left del primer bloc */
 }
 
-#formulari-VeritatOFals select {
+select {
   width: 100%;
   padding: 10px 12px;
   font-size: 16px;
-  border: 1.5px solid #d1d5db;
+  border: 1.5px solid #d1d5db; /* Border color unificat */
   border-radius: 8px;
-  background-color: #f9fafb;
-  color: #374151;
-  appearance: none;
+  background-color: #f9fafb; /* Background color unificat */
+  color: #374151; /* Color de text unificat */
+  appearance: none; /* Elimina l'estil per defecte del navegador */
   cursor: pointer;
-  box-shadow: none;
+  box-shadow: none; /* Sense ombra per defecte */
   transition: border-color 0.3s ease;
 }
 
-#formulari-VeritatOFals select:hover,
-#formulari-VeritatOFals select:focus {
-  border-color: #2563eb;
+select:hover,
+select:focus {
+  border-color: #2563eb; /* Border color hover/focus unificat */
   outline: none;
-  box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.4); /* Ombra hover/focus unificada */
 }
 
-#formulari-VeritatOFals button[type="submit"] {
-  background-color: #2563eb;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 700;
-  padding: 12px 36px;
+/* Unificació de button[type="submit"] i button#startGame en un sol estil general,
+   i després un estil específic per button#startGame si cal. */
+button[type="submit"],
+button#startGame {
+  background-color: #2563eb; /* Color de fons unificat */
+  color: #ffffff; /* Color de text unificat */
+  font-size: 18px; /* Mida de font unificada */
+  font-weight: 700; /* Pes de font unificat */
+  padding: 12px 36px; /* Padding unificat per botons de submit */
   border: none;
   border-radius: 24px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  user-select: none;
-  letter-spacing: 2px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transició unificada */
+  user-select: none; /* User-select unificat */
+  letter-spacing: 2px; /* Espaiat de lletra unificat */
   text-transform: uppercase;
   margin-top: 20px;
 }
 
-#formulari-VeritatOFals button[type="submit"]:hover {
-  background-color: #1e40af;
-  transform: scale(1.05);
+button[type="submit"]:hover,
+button#startGame:hover {
+  background-color: #1e40af; /* Color de fons hover unificat */
+  transform: scale(1.05); /* Transformació hover unificada */
+}
+
+/* Estil específic per button#startGame si ha de ser lleugerament diferent,
+   si no, es pot eliminar i només usar l'anterior. */
+button#startGame {
+  padding: 14px 48px; /* Manté el padding del segon bloc per startGame si és diferent */
+  font-family: "Poppins", sans-serif; /* Assegura la font per startGame */
+}
+
+button#startGame:active {
+  transform: scale(0.95); /* Animació active unificada */
+}
+
+.contenidor-drop,
+.contenidor-elements {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.zona-drop {
+  width: 110px;
+  height: 110px;
+  background-color: #e5e7eb; /* Color de fons unificat */
+  border: 2px dashed #9ca3af; /* Border unificat */
+  border-radius: 12px;
+  font-size: 22px; /* Mida de font unificada */
+  color: #6b7280; /* Color de text unificat */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.zona-drop.dragover {
+  background-color: #dbeafe; /* Color de fons unificat */
+  border-color: #3b82f6; /* Border color unificat */
+  color: #2563eb; /* Color de text unificat */
 }
 
 .element {
@@ -99,7 +144,7 @@ h1 {
   color: #ffffff; /* Color de text unificat */
   padding: 14px 24px; /* Padding unificat */
   border-radius: 16px;
-  cursor: pointer; /* Canviat a pointer per consistència amb botons */
+  cursor: grab;
   font-size: 18px; /* Mida de font unificada */
   font-weight: 600;
   box-shadow: none; /* Sense ombra */
@@ -113,99 +158,104 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Estils per a la secció del joc (VeritatOFals.html) */
-#crono-VeritatOFals {
+.encert {
+  background-color: #22c55e !important;
+  color: #14532d !important;
+  box-shadow: 0 0 10px #22c55e !important;
+}
+
+.error {
+  background-color: #ef4444 !important;
+  color: #7f1d1d !important;
+  box-shadow: 0 0 10px #ef4444 !important;
+}
+
+#crono {
   font-size: 28px;
   font-weight: 700;
-  color: #2563eb;
-  background-color: #e0e7ff;
+  color: #2563eb; /* Color de text unificat */
+  background-color: #e0e7ff; /* Color de fons unificat */
   padding: 14px 32px;
   border-radius: 16px;
   display: inline-block;
-  margin: 28px auto 40px auto;
+  margin: 28px auto 40px auto; /* Marge unificat */
   min-width: 140px;
-  user-select: none;
+  user-select: none; /* User-select unificat */
   letter-spacing: 2px;
   text-transform: uppercase;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3); /* Ombra unificada */
 }
 
-#score-VeritatOFals,
-#progress-VeritatOFals {
-  font-size: 20px;
+.desactived {
+  background-color: #c9e3ff !important; /* Manté el color del primer bloc */
+  color: #1e3a8a;
+  padding: 12px 20px;
+  border-radius: 16px;
+  cursor: no-drop;
+  font-size: 16px;
   font-weight: 600;
-  color: #374151;
-  margin-bottom: 12px;
   user-select: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#question-VeritatOFals {
-  font-size: 28px; /* Mida més gran per a la pregunta de V/F */
-  font-weight: 700;
+/* Nous estils del segon bloc */
+#question {
+  font-size: 24px;
+  font-weight: 600;
   color: #1e40af;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   user-select: none;
-  max-width: 700px; /* Augmenta l'ample màxim */
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.4; /* Millora la llegibilitat */
 }
 
-#options-VeritatOFals {
+#options {
   display: flex;
   justify-content: center;
-  gap: 25px; /* Augmenta l'espai entre els botons V/F */
+  gap: 16px;
+  flex-wrap: wrap;
   margin-bottom: 24px;
 }
 
-.option-VeritatOFals {
+.option {
   background-color: #2563eb;
   border: none;
-  border-radius: 15px; /* Vora més arrodonida */
+  border-radius: 12px;
   color: white;
-  font-weight: 700; /* Text més gruixut */
-  padding: 16px 40px; /* Padding més gran */
-  font-size: 22px; /* Mida de font més gran */
+  font-weight: 600;
+  padding: 14px 28px;
+  font-size: 18px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s ease, transform 0.15s ease,
-    box-shadow 0.2s ease;
-  min-width: 150px; /* Assegura una amplada mínima */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombra més pronunciada */
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.option-VeritatOFals:hover {
+.option:hover {
   background-color: #1e40af;
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-.true-button {
-  background-color: #22c55e; /* Verd per a VERITAT */
-}
-
-.true-button:hover {
-  background-color: #16a34a;
-}
-
-.false-button {
-  background-color: #ef4444; /* Vermell per a FALS */
-}
-
-.false-button:hover {
-  background-color: #dc2626;
-}
-
-#feedback-VeritatOFals {
-  font-size: 22px; /* Mida més gran */
-  font-weight: 700;
+#feedback {
+  font-size: 20px;
+  font-weight: 600;
   min-height: 30px;
   margin-bottom: 30px;
   user-select: none;
 }
 
-/* Estils per a la secció de resultats (VeritatOFals.html) */
-#resultat-VeritatOFals {
+#scoreboard {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 24px;
+  user-select: none;
+}
+
+/* Resultats finals */
+#resultat {
   max-width: 480px;
   margin: 0 auto;
   background: #ffffff;
@@ -214,18 +264,19 @@ h1 {
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
 }
 
-#resultat-VeritatOFals h2 {
+#resultat h2 {
   color: #2563eb;
   margin-bottom: 16px;
 }
 
-#resultat-VeritatOFals p {
+#resultat p {
   font-size: 20px;
   margin-bottom: 32px;
   color: #374151;
 }
 
-#resultat-VeritatOFals button {
+/* Botó resultats */
+#resultat button {
   background-color: #2563eb;
   color: #fff;
   border: none;
@@ -237,14 +288,13 @@ h1 {
   letter-spacing: 2px;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
-  margin-top: 10px; /* Ajusta el marge superior */
 }
 
-#resultat-VeritatOFals button:hover {
+#resultat button:hover {
   background-color: #1e40af;
 }
 
-/* Estils del botó "Tornar al Menú" (igual que al teu altre joc) */
+/* NOU: Estils per al botó de tornar al menú del joc/resultats */
 .game-control-button {
   background-color: #6b7280; /* Un color gris per diferenciar-lo una mica */
   color: #ffffff;
@@ -266,16 +316,110 @@ h1 {
   transform: scale(1.03);
 }
 
-.element-tornar {
-  background-color: #2563eb; /* Color de fons unificat */
-  color: #ffffff; /* Color de text unificat */
-  padding: 14px 24px; /* Padding unificat */
+.desactived {
+  background-color: #c9e3ff !important; /* Manté el color del primer bloc */
+  color: #1e3a8a;
+  padding: 12px 20px;
   border-radius: 16px;
-  cursor: grab;
-  font-size: 18px; /* Mida de font unificada */
+  cursor: no-drop;
+  font-size: 16px;
   font-weight: 600;
-  box-shadow: none; /* Sense ombra */
+  user-select: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  user-select: none; /* User-select unificat */
-  border: 0; /* Manté border: 0 del primer bloc */
+}
+
+/* Nous estils del segon bloc */
+#question {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 24px;
+  user-select: none;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#options {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.option {
+  background-color: #2563eb;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  padding: 14px 28px;
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option:hover {
+  background-color: #1e40af;
+  transform: scale(1.05);
+}
+
+#feedback {
+  font-size: 20px;
+  font-weight: 600;
+  min-height: 30px;
+  margin-bottom: 30px;
+  user-select: none;
+}
+
+#scoreboard {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 24px;
+  user-select: none;
+}
+
+/* Resultats finals */
+#resultat {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+#resultat h2 {
+  color: #2563eb;
+  margin-bottom: 16px;
+}
+
+#resultat p {
+  font-size: 20px;
+  margin-bottom: 32px;
+  color: #374151;
+}
+
+/* Botó resultats */
+#resultat button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 36px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+#resultat button:hover {
+  background-color: #1e40af;
 }
