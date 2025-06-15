@@ -1202,9 +1202,11 @@ const optionsDiv = document.getElementById("options");
 const feedback = document.getElementById("feedback");
 const missatgeFinal = document.getElementById("missatgeFinal");
 
-// NOUS: Referències als nous botons de tornar al menú
+// Referències als botons de tornar al menú
 const tornarMenuJocBtn = document.getElementById("tornarMenuJoc");
+// IMPORTANT: Afegeix un id="tornarMenuResultat" al botó de la secció de resultats si vols que funcioni amb aquesta lògica
 const tornarMenuResultatBtn = document.getElementById("tornarMenuResultat");
+
 
 function shuffleArray(array) {
   return array
@@ -1216,7 +1218,7 @@ function shuffleArray(array) {
 function startTimer(duration) {
   clearInterval(timerInterval);
   let timeLeft = duration;
-  crono.textContent = `Temps restant: ${timeLeft}s`;
+  crono.textContent = `Temps restant: ${timeLeft}s`; // Moved here to display immediately
 
   timerInterval = setInterval(() => {
     timeLeft--;
@@ -1224,7 +1226,8 @@ function startTimer(duration) {
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
       feedback.textContent = "Temps esgotat!";
-      feedback.style.color = "red";
+      feedback.classList.remove('correct-text', 'error-text'); // Neteja classes per defecte
+      feedback.classList.add('error-text'); // Aplica color vermell al text
       disableOptions();
       setTimeout(nextQuestionOrEnd, 1500);
     }
@@ -1246,6 +1249,18 @@ function enableOptions() {
 }
 
 function getNewQuestion() {
+  // Neteja les classes de feedback i colors de les opcions anteriors
+  feedback.textContent = "";
+  feedback.classList.remove('correct-text', 'error-text'); // Neteja totes les classes de color del feedback
+
+  // Neteja les classes de color de totes les opcions
+  const oldOptionButtons = optionsDiv.querySelectorAll(".option");
+  oldOptionButtons.forEach(btn => {
+      btn.classList.remove('correct', 'incorrect');
+      btn.disabled = false; // Assegura que estiguin habilitats per si es re-usen o per quan es generen de nou
+  });
+
+
   if (questionsAsked >= totalQuestions) {
     acabarJoc();
     return;
@@ -1260,14 +1275,13 @@ function getNewQuestion() {
   progressDisplay.textContent = `Pregunta ${questionsAsked} de ${totalQuestions}`;
   questionDisplay.textContent = current.pregunta;
 
-  optionsDiv.innerHTML = "";
-  feedback.textContent = "";
+  optionsDiv.innerHTML = ""; // Assegura que es netegen completament els botons anteriors
 
   shuffleArray(current.opcions).forEach((opcio) => {
     const btn = document.createElement("button");
     btn.textContent = opcio;
     btn.className = "option";
-    btn.disabled = false;
+    btn.disabled = false; // Habilita el botó per defecte
     btn.onclick = () => checkAnswer(opcio, current.respostaCorrecta);
     optionsDiv.appendChild(btn);
   });
@@ -1277,21 +1291,35 @@ function getNewQuestion() {
 
 function checkAnswer(selected, correct) {
   clearInterval(timerInterval);
-  disableOptions();
+  disableOptions(); // Deshabilita totes les opcions immediatament
+
+  const optionButtons = optionsDiv.querySelectorAll(".option");
+
+  // Recorre totes les opcions per aplicar les classes de color
+  optionButtons.forEach(btn => {
+      if (btn.textContent === correct) {
+          btn.classList.add('correct'); // La resposta correcta sempre és verda
+      } else if (btn.textContent === selected) {
+          btn.classList.add('incorrect'); // La resposta seleccionada és vermella si és incorrecta
+      }
+  });
+
 
   if (selected === correct) {
     feedback.textContent = "Correcte! 🎉";
-    feedback.style.color = "green";
+    feedback.classList.remove('error-text'); // Neteja la classe d'error si existeix
+    feedback.classList.add('correct-text'); // Afegeix la classe de text correcte
     score++;
   } else {
-    feedback.textContent = `Incorrecte. La resposta correcta és ${correct}`;
-    feedback.style.color = "red";
+    feedback.textContent = `Incorrecte.`; // Simplificat a només "Incorrecte."
+    feedback.classList.remove('correct-text'); // Neteja la classe de correcte si existeix
+    feedback.classList.add('error-text'); // Afegeix la classe de text d'error
   }
 
   scoreDisplay.textContent = `Puntuació: ${score}`;
 
   setTimeout(() => {
-    feedback.textContent = "";
+    // Les classes de color del feedback es netejaran al principi de getNewQuestion()
     getNewQuestion();
   }, 1500);
 }
@@ -1338,6 +1366,7 @@ function reiniciarJoc() {
   resultat.style.display = "none";
   formulari.style.display = "block"; // Tornar al formulari
   feedback.textContent = "";
+  feedback.classList.remove('correct-text', 'error-text'); // Neteja classes de feedback
   crono.textContent = "";
   // Assegurem-nos de parar el guardat de l'estat si es reinicia des dels resultats
   stopSaveStatus();
@@ -1352,6 +1381,7 @@ function tornarAlMenu() {
   scoreDisplay.textContent = `Puntuació: 0`;
   progressDisplay.textContent = `Pregunta 0 de 0`;
   feedback.textContent = "";
+  feedback.classList.remove('correct-text', 'error-text'); // Neteja classes de feedback
   crono.textContent = "";
 
   joc.style.display = "none"; // Ocultem la secció del joc
@@ -1397,12 +1427,17 @@ document.getElementById("configuracioJoc").addEventListener("submit", (e) => {
   scoreDisplay.textContent = `Puntuació: 0`;
   progressDisplay.textContent = `Pregunta 0 de 0`;
   feedback.textContent = "";
+  feedback.classList.remove('correct-text', 'error-text'); // Neteja classes de feedback
   getNewQuestion();
 });
 
-// NOU: Assignar la funció 'tornarAlMenu' als nous botons
+// NOU: Assignar la funció 'tornarAlMenu' als botons
 tornarMenuJocBtn.addEventListener("click", tornarAlMenu);
-tornarMenuResultatBtn.addEventListener("click", tornarAlMenu);
+// Assegura't que l'element amb ID 'tornarMenuResultat' existeix al teu HTML si el vols usar
+if (tornarMenuResultatBtn) {
+    tornarMenuResultatBtn.addEventListener("click", tornarAlMenu);
+}
+
 
 //requests to the server
 function newGameRequest() {

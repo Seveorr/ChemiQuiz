@@ -38,24 +38,31 @@
 
         <button type="submit">Començar joc</button>
         </br></br></br>
-        <a href="../jocs" style="text-decoration: none;" class="element">TORNAR ALS JOCS</a>
+        <a href="../jocs" style="text-decoration: none;" class="element-tornar">TORNAR ALS JOCS</a>
       </form>
     </section>
 
     <section id="joc" style="display: none">
-      <div id="crono"></div>
-      <p id="score">Puntuació: 0</p>
-      <p id="progress">Pregunta 0 de 0</p>
-      <p id="question">Pregunta apareixerà aquí</p>
-      <div id="options"></div>
-      <p id="feedback"></p>
-      <button id="tornarMenuJoc" class="element-tornar">Tornar al Menú</button>
+      <div class="game-header">
+        <div id="crono">00:00</div>
+        <div class="score-progress">
+          <p id="score">Puntuació: 0</p>
+          <p id="progress">Pregunta 0 de 0</p>
+        </div>
+      </div>
+
+      <div class="game-content-panel">
+        <p id="question">Pregunta apareixerà aquí</p>
+        <div id="options"></div>
+        <p id="feedback"></p>
+        <button id="tornarMenuJoc" class="element-tornar">Tornar al Menú</button>
+      </div>
     </section>
 
     <section id="resultat" style="display: none">
       <h2>Resultat Final</h2>
       <p id="missatgeFinal"></p>
-      <button onclick="reiniciarJoc()">Tornar a jugar</button>
+      <button onclick="reiniciarJoc()">Tornar al Menú</button>
     </section>
 
     <script src="script.js"></script>
