@@ -10,7 +10,7 @@
 
 - Visualitza una taula periòdica completa amb tots els elements químics.
 - Fes clic en qualsevol element per obrir una pestanya amb informació detallada, incloent:
-  - Pes atòmic
+  - Pes atòmic  
   - Punt de fusió i ebullició
   - Altres propietats rellevants
 
