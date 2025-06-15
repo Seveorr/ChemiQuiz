@@ -5,7 +5,8 @@ body {
   padding: 40px; /* Manté el padding del primer bloc */
   text-align: center;
   color: #374151; /* Gris fosc suau unificat */
-  background: url("https://img.freepik.com/vector-gratis/papel-tapiz-fondo-abstracto-vector-patron-circulo-geometrico-gris_53876-140223.jpg?semt=ais_hybrid&w=740") no-repeat center center fixed;
+  background: url("https://img.freepik.com/vector-gratis/papel-tapiz-fondo-abstracto-vector-patron-circulo-geometrico-gris_53876-140223.jpg?semt=ais_hybrid&w=740")
+    no-repeat center center fixed;
   background-size: cover;
   position: relative;
   color: rgb(0, 0, 0); /* Aquest color és pel text del body per defecte, si es fa servir. El text dels elements (h1, form, etc.) es sobrescriurà. */
@@ -74,7 +75,7 @@ select:focus {
 }
 
 /* Unificació de button[type="submit"] i button#startGame en un sol estil general,
-   i després un estil específic per button#startGame si cal. */
+   i després un estil específic per button#startGame si cal. */
 button[type="submit"],
 button#startGame {
   background-color: #2563eb; /* Color de fons unificat */
@@ -99,7 +100,7 @@ button#startGame:hover {
 }
 
 /* Estil específic per button#startGame si ha de ser lleugerament diferent,
-   si no, es pot eliminar i només usar l'anterior. */
+   si no, es pot eliminar i només usar l'anterior. */
 button#startGame {
   padding: 14px 48px; /* Manté el padding del segon bloc per startGame si és diferent */
   font-family: "Poppins", sans-serif; /* Assegura la font per startGame */
@@ -183,6 +184,136 @@ button#startGame:active {
   letter-spacing: 2px;
   text-transform: uppercase;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3); /* Ombra unificada */
+}
+
+.desactived {
+  background-color: #c9e3ff !important; /* Manté el color del primer bloc */
+  color: #1e3a8a;
+  padding: 12px 20px;
+  border-radius: 16px;
+  cursor: no-drop;
+  font-size: 16px;
+  font-weight: 600;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Nous estils del segon bloc */
+#question {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 24px;
+  user-select: none;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#options {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.option {
+  background-color: #2563eb;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  padding: 14px 28px;
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option:hover {
+  background-color: #1e40af;
+  transform: scale(1.05);
+}
+
+#feedback {
+  font-size: 20px;
+  font-weight: 600;
+  min-height: 30px;
+  margin-bottom: 30px;
+  user-select: none;
+}
+
+#scoreboard {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 24px;
+  user-select: none;
+}
+
+/* Resultats finals */
+#resultat {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+#resultat h2 {
+  color: #2563eb;
+  margin-bottom: 16px;
+}
+
+#resultat p {
+  font-size: 20px;
+  margin-bottom: 32px;
+  color: #374151;
+}
+
+/* Botó resultats */
+#resultat button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 36px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+#resultat button:hover {
+  background-color: #1e40af;
+}
+
+/* NOU: Estils per al botó de tornar al menú del joc/resultats */
+.game-control-button {
+  background-color: #6b7280; /* Un color gris per diferenciar-lo una mica */
+  color: #ffffff;
+  font-size: 16px; /* Una mica més petit que els botons de joc */
+  font-weight: 600;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  text-transform: uppercase;
+  margin-top: 30px; /* Espai per sobre */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.game-control-button:hover {
+  background-color: #4b5563; /* Gris més fosc al passar el ratolí */
+  transform: scale(1.03);
 }
 
 .desactived {

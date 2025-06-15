@@ -1202,6 +1202,10 @@ const optionsDiv = document.getElementById("options");
 const feedback = document.getElementById("feedback");
 const missatgeFinal = document.getElementById("missatgeFinal");
 
+// NOUS: Referències als nous botons de tornar al menú
+const tornarMenuJocBtn = document.getElementById("tornarMenuJoc");
+const tornarMenuResultatBtn = document.getElementById("tornarMenuResultat");
+
 function shuffleArray(array) {
   return array
     .map((value) => ({ value, sort: Math.random(seed) }))
@@ -1332,9 +1336,27 @@ function reiniciarJoc() {
   scoreDisplay.textContent = `Puntuació: 0`;
   progressDisplay.textContent = `Pregunta 0 de 0`;
   resultat.style.display = "none";
-  formulari.style.display = "block";
+  formulari.style.display = "block"; // Tornar al formulari
   feedback.textContent = "";
   crono.textContent = "";
+  // Assegurem-nos de parar el guardat de l'estat si es reinicia des dels resultats
+  stopSaveStatus();
+}
+
+// NOU: Funció per tornar al menú (formulari) des de qualsevol punt del joc
+function tornarAlMenu() {
+  clearInterval(timerInterval); // Aturem el cronòmetre
+  stopSaveStatus(); // Aturem el guardat automàtic del progrés
+  score = 0; // Reiniciem la puntuació
+  questionsAsked = 0; // Reiniciem les preguntes
+  scoreDisplay.textContent = `Puntuació: 0`;
+  progressDisplay.textContent = `Pregunta 0 de 0`;
+  feedback.textContent = "";
+  crono.textContent = "";
+
+  joc.style.display = "none"; // Ocultem la secció del joc
+  resultat.style.display = "none"; // Ocultem la secció de resultats
+  formulari.style.display = "block"; // Mostrem la secció del formulari (menú principal)
 }
 
 document.getElementById("configuracioJoc").addEventListener("submit", (e) => {
@@ -1377,6 +1399,10 @@ document.getElementById("configuracioJoc").addEventListener("submit", (e) => {
   feedback.textContent = "";
   getNewQuestion();
 });
+
+// NOU: Assignar la funció 'tornarAlMenu' als nous botons
+tornarMenuJocBtn.addEventListener("click", tornarAlMenu);
+tornarMenuResultatBtn.addEventListener("click", tornarAlMenu);
 
 //requests to the server
 function newGameRequest() {
