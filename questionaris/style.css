@@ -265,3 +265,17 @@ h1 {
   background-color: #4b5563; /* Gris més fosc al passar el ratolí */
   transform: scale(1.03);
 }
+
+.element-tornar {
+  background-color: #2563eb; /* Color de fons unificat */
+  color: #ffffff; /* Color de text unificat */
+  padding: 14px 24px; /* Padding unificat */
+  border-radius: 16px;
+  cursor: grab;
+  font-size: 18px; /* Mida de font unificada */
+  font-weight: 600;
+  box-shadow: none; /* Sense ombra */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none; /* User-select unificat */
+  border: 0; /* Manté border: 0 del primer bloc */
+}
