@@ -294,6 +294,20 @@ button#startGame:active {
   background-color: #1e40af;
 }
 
+.element-tornar {
+  background-color: #2563eb; /* Color de fons unificat */
+  color: #ffffff; /* Color de text unificat */
+  padding: 14px 24px; /* Padding unificat */
+  border-radius: 16px;
+  cursor: grab;
+  font-size: 18px; /* Mida de font unificada */
+  font-weight: 600;
+  box-shadow: none; /* Sense ombra */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none; /* User-select unificat */
+  border: 0; /* Manté border: 0 del primer bloc */
+}
+
 /* NOU: Estils per al botó de tornar al menú del joc/resultats */
 .game-control-button {
   background-color: #6b7280; /* Un color gris per diferenciar-lo una mica */
