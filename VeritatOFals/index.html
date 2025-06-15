@@ -9,8 +9,8 @@
   <body>
     <h1>ChemiQuiz: Veritat o Fals</h1>
 
-    <section id="formulari-VeritatOFals">
-      <form id="configuracioJocVeritatOFals">
+    <section id="formulari-vf">
+      <form id="configuracioJocVf">
         <h3>Decideix si les afirmacions sobre la Taula Periòdica són vertaderes o falses.</h3>
         <p>
           Posa a prova els teus coneixements amb afirmacions sobre els elements
@@ -20,7 +20,7 @@
 
         <label>
           Dificultat:
-          <select id="dificultatVeritatOFals">
+          <select id="dificultatVf">
             <option value="facil">Fàcil (10 preguntes)</option>
             <option value="mitja">Mitjà (15 preguntes)</option>
             <option value="dificil">Difícil (20 preguntes)</option>
@@ -34,24 +34,24 @@
       </form>
     </section>
 
-    <section id="joc-VeritatOFals" style="display: none">
-      <div id="crono-VeritatOFals"></div>
-      <p id="score-VeritatOFals">Puntuació: 0</p>
-      <p id="progress-VeritatOFals">Pregunta 0 de 0</p>
-      <p id="question-VeritatOFals">L'hidrogen és un metall alcalí.</p>
-      <div id="options-VeritatOFals">
-        <button class="option-VeritatOFals true-button">VERITAT</button>
-        <button class="option-VeritatOFals false-button">FALS</button>
+    <section id="joc-vf" style="display: none">
+      <div id="crono-vf"></div>
+      <p id="score-vf">Puntuació: 0</p>
+      <p id="progress-vf">Pregunta 0 de 0</p>
+      <p id="question-vf">L'hidrogen és un metall alcalí.</p>
+      <div id="options-vf">
+        <button class="option-vf true-button">VERITAT</button>
+        <button class="option-vf false-button">FALS</button>
       </div>
-      <p id="feedback-VeritatOFals"></p>
-      <button id="tornarMenuJocVeritatOFals" class="game-control-button">Tornar al Menú</button>
+      <p id="feedback-vf"></p>
+      <button id="tornarMenuJocVf" class="game-control-button">Tornar al Menú</button>
     </section>
 
-    <section id="resultat-VeritatOFals" style="display: none">
+    <section id="resultat-vf" style="display: none">
       <h2>Resultat Final</h2>
-      <p id="missatgeFinalVeritatOFals"></p>
-      <button onclick="reiniciarJocVeritatOFals()">Tornar a jugar</button>
-      <button id="tornarMenuResultatVeritatOFals" class="game-control-button">Tornar al Menú</button>
+      <p id="missatgeFinalVf"></p>
+      <button onclick="reiniciarJocVf()">Tornar a jugar</button>
+      <button id="tornarMenuResultatVf" class="game-control-button">Tornar al Menú</button>
     </section>
 
     <script src="script.js"></script>

@@ -22,8 +22,8 @@ h1 {
   text-shadow: none; /* Sense ombra de text unificat */
 }
 
-/* Estils per al formulari de configuració del joc (VeritatOFals.html) */
-#formulari-VeritatOFals form {
+/* Estils per al formulari de configuració del joc (veritat_fals.html) */
+#formulari-vf form {
   background: #ffffff;
   display: inline-block;
   padding: 24px 32px;
@@ -35,11 +35,11 @@ h1 {
   margin: auto;
 }
 
-#formulari-VeritatOFals form:hover {
+#formulari-vf form:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-#formulari-VeritatOFals label {
+#formulari-vf label {
   cursor: pointer;
   font-weight: 600;
   color: #374151;
@@ -52,7 +52,7 @@ h1 {
   text-align: left;
 }
 
-#formulari-VeritatOFals select {
+#formulari-vf select {
   width: 100%;
   padding: 10px 12px;
   font-size: 16px;
@@ -66,14 +66,14 @@ h1 {
   transition: border-color 0.3s ease;
 }
 
-#formulari-VeritatOFals select:hover,
-#formulari-VeritatOFals select:focus {
+#formulari-vf select:hover,
+#formulari-vf select:focus {
   border-color: #2563eb;
   outline: none;
   box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
 }
 
-#formulari-VeritatOFals button[type="submit"] {
+#formulari-vf button[type="submit"] {
   background-color: #2563eb;
   color: #ffffff;
   font-size: 18px;
@@ -89,7 +89,7 @@ h1 {
   margin-top: 20px;
 }
 
-#formulari-VeritatOFals button[type="submit"]:hover {
+#formulari-vf button[type="submit"]:hover {
   background-color: #1e40af;
   transform: scale(1.05);
 }
@@ -113,8 +113,8 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Estils per a la secció del joc (VeritatOFals.html) */
-#crono-VeritatOFals {
+/* Estils per a la secció del joc (veritat_fals.html) */
+#crono-vf {
   font-size: 28px;
   font-weight: 700;
   color: #2563eb;
@@ -130,8 +130,8 @@ h1 {
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
-#score-VeritatOFals,
-#progress-VeritatOFals {
+#score-vf,
+#progress-vf {
   font-size: 20px;
   font-weight: 600;
   color: #374151;
@@ -139,7 +139,7 @@ h1 {
   user-select: none;
 }
 
-#question-VeritatOFals {
+#question-vf {
   font-size: 28px; /* Mida més gran per a la pregunta de V/F */
   font-weight: 700;
   color: #1e40af;
@@ -151,14 +151,14 @@ h1 {
   line-height: 1.4; /* Millora la llegibilitat */
 }
 
-#options-VeritatOFals {
+#options-vf {
   display: flex;
   justify-content: center;
   gap: 25px; /* Augmenta l'espai entre els botons V/F */
   margin-bottom: 24px;
 }
 
-.option-VeritatOFals {
+.option-vf {
   background-color: #2563eb;
   border: none;
   border-radius: 15px; /* Vora més arrodonida */
@@ -174,7 +174,7 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombra més pronunciada */
 }
 
-.option-VeritatOFals:hover {
+.option-vf:hover {
   background-color: #1e40af;
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
@@ -196,7 +196,7 @@ h1 {
   background-color: #dc2626;
 }
 
-#feedback-VeritatOFals {
+#feedback-vf {
   font-size: 22px; /* Mida més gran */
   font-weight: 700;
   min-height: 30px;
@@ -204,8 +204,8 @@ h1 {
   user-select: none;
 }
 
-/* Estils per a la secció de resultats (VeritatOFals.html) */
-#resultat-VeritatOFals {
+/* Estils per a la secció de resultats (veritat_fals.html) */
+#resultat-vf {
   max-width: 480px;
   margin: 0 auto;
   background: #ffffff;
@@ -214,18 +214,18 @@ h1 {
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
 }
 
-#resultat-VeritatOFals h2 {
+#resultat-vf h2 {
   color: #2563eb;
   margin-bottom: 16px;
 }
 
-#resultat-VeritatOFals p {
+#resultat-vf p {
   font-size: 20px;
   margin-bottom: 32px;
   color: #374151;
 }
 
-#resultat-VeritatOFals button {
+#resultat-vf button {
   background-color: #2563eb;
   color: #fff;
   border: none;
@@ -240,7 +240,7 @@ h1 {
   margin-top: 10px; /* Ajusta el marge superior */
 }
 
-#resultat-VeritatOFals button:hover {
+#resultat-vf button:hover {
   background-color: #1e40af;
 }
 
