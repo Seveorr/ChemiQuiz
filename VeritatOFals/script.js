@@ -145,7 +145,8 @@ function startTimerVf(duration) {
     if (timeLeft <= 0) {
       clearInterval(timerIntervalVf);
       feedbackVf.textContent = "Temps esgotat!";
-      feedbackVf.style.color = "red";
+      feedbackVf.classList.remove('correct-text', 'error-text');
+      feedbackVf.classList.add('error-text');
       disableOptionsVf();
       setTimeout(nextQuestionOrEndVf, 1500);
     }
@@ -167,6 +168,17 @@ function enableOptionsVf() {
 }
 
 function getNewQuestionVf() {
+  // Neteja les classes de feedback i colors de les opcions anteriors
+  feedbackVf.textContent = "";
+  feedbackVf.classList.remove('correct-text', 'error-text');
+
+  const optionButtons = optionsDivVf.querySelectorAll(".option-vf");
+  optionButtons.forEach(btn => {
+      btn.classList.remove('correct', 'incorrect');
+      btn.disabled = false; // Re-habilita els botons
+  });
+
+
   if (questionsAskedVf >= totalQuestionsVf) {
     acabarJocVf();
     return;
@@ -180,39 +192,53 @@ function getNewQuestionVf() {
   questionDisplayVf.textContent = current.pregunta;
 
   // Assegura't que els botons True/False estiguin sempre presents i actius
-  optionsDivVf.innerHTML = `
-        <button class="option-vf true-button">VERITAT</button>
-        <button class="option-vf false-button">FALS</button>
-    `;
-  feedbackVf.textContent = "";
-  enableOptionsVf(); // Reactiva els botons per a la nova pregunta
-
+  // No cal recrear l'HTML si ja està en el DOM, només actualitzar-lo
   const trueBtn = optionsDivVf.querySelector(".true-button");
   const falseBtn = optionsDivVf.querySelector(".false-button");
 
-  trueBtn.onclick = () => checkAnswerVf(true, current.respostaCorrecta);
-  falseBtn.onclick = () => checkAnswerVf(false, current.respostaCorrecta);
+  trueBtn.onclick = () => checkAnswerVf(true, current.respostaCorrecta, trueBtn);
+  falseBtn.onclick = () => checkAnswerVf(false, current.respostaCorrecta, falseBtn);
 
   startTimerVf(15);
 }
 
-function checkAnswerVf(selected, correct) {
+function checkAnswerVf(selected, correct, clickedButton) {
   clearInterval(timerIntervalVf);
   disableOptionsVf();
 
+  const trueBtn = optionsDivVf.querySelector(".true-button");
+  const falseBtn = optionsDivVf.querySelector(".false-button");
+
+  // Marca la resposta correcta en verd
+  if (correct === true) {
+      trueBtn.classList.add('correct');
+      falseBtn.classList.add('incorrect'); // Si la correcta es VERITAT, FALS es incorrecta
+  } else { // correct === false
+      falseBtn.classList.add('correct');
+      trueBtn.classList.add('incorrect'); // Si la correcta es FALS, VERITAT es incorrecta
+  }
+
+  // Si l'usuari ha seleccionat la incorrecta, la marca explícitament
+  if (selected !== correct) {
+      clickedButton.classList.add('incorrect');
+      clickedButton.classList.remove('correct'); // Assegura que no tingui la classe 'correct'
+  }
+
+
   if (selected === correct) {
     feedbackVf.textContent = "Correcte! 🎉";
-    feedbackVf.style.color = "green";
+    feedbackVf.classList.remove('error-text');
+    feedbackVf.classList.add('correct-text');
     scoreVf++;
   } else {
-    feedbackVf.textContent = `Incorrecte. La resposta correcta és ${correct ? "VERITAT" : "FALS"}`;
-    feedbackVf.style.color = "red";
+    feedbackVf.textContent = `Incorrecte.`; // Simplificat
+    feedbackVf.classList.remove('correct-text');
+    feedbackVf.classList.add('error-text');
   }
 
   scoreDisplayVf.textContent = `Puntuació: ${scoreVf}`;
 
   setTimeout(() => {
-    feedbackVf.textContent = "";
     getNewQuestionVf();
   }, 1500);
 }
@@ -260,6 +286,7 @@ function reiniciarJocVf() {
   resultatVf.style.display = "none";
   formulariVf.style.display = "block";
   feedbackVf.textContent = "";
+  feedbackVf.classList.remove('correct-text', 'error-text');
   cronoVf.textContent = "";
   stopSaveStatusVf(); // Assegura't de parar el guardat d'estat
 }
@@ -272,6 +299,7 @@ function tornarAlMenuVf() {
   scoreDisplayVf.textContent = `Puntuació: 0`;
   progressDisplayVf.textContent = `Pregunta 0 de 0`;
   feedbackVf.textContent = "";
+  feedbackVf.classList.remove('correct-text', 'error-text');
   cronoVf.textContent = "";
 
   jocVf.style.display = "none";
@@ -308,6 +336,7 @@ document.getElementById("configuracioJocVf").addEventListener("submit", (e) => {
   scoreDisplayVf.textContent = `Puntuació: 0`;
   progressDisplayVf.textContent = `Pregunta 0 de 0`;
   feedbackVf.textContent = "";
+  feedbackVf.classList.remove('correct-text', 'error-text');
   getNewQuestionVf();
 });
 

@@ -23,16 +23,38 @@ h1 {
 }
 
 /* Estils per al formulari de configuració del joc (veritat_fals.html) */
+#formulari-vf {
+    display: flex; /* Utilitzem flexbox per centrar el contingut */
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Ocupa gairebé tota l'altura de la finestra menys el padding del body */
+}
+
 #formulari-vf form {
   background: #ffffff;
-  display: inline-block;
+  display: flex; /* Canviat a flex */
+  flex-direction: column; /* Organitza els elements en columna */
+  align-items: center; /* Centra els elements horitzontalment */
   padding: 24px 32px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  max-width: 320px;
+  max-width: 380px; /* Un pel més ample per a text addicional */
   width: 100%;
-  margin: auto;
+  margin: auto; /* Centra el formulari en la pàgina */
+}
+
+#formulari-vf form h3 {
+    color: #1e40af; /* Blau fosc per al títol de la descripció */
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#formulari-vf form p {
+    color: #4b5563; /* Gris fosc per a la descripció */
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
 #formulari-vf form:hover {
@@ -50,10 +72,12 @@ h1 {
   gap: 8px;
   font-size: 16px;
   text-align: left;
+  width: 100%; /* Ocupa tot l'ample del formulari */
+  justify-content: space-between; /* Espacia el text del select */
 }
 
 #formulari-vf select {
-  width: 100%;
+  width: 60%; /* Ajusta l'ample del select */
   padding: 10px 12px;
   font-size: 16px;
   border: 1.5px solid #d1d5db;
@@ -94,86 +118,114 @@ h1 {
   transform: scale(1.05);
 }
 
-.element {
-  background-color: #2563eb; /* Color de fons unificat */
-  color: #ffffff; /* Color de text unificat */
-  padding: 14px 24px; /* Padding unificat */
-  border-radius: 16px;
-  cursor: pointer; /* Canviat a pointer per consistència amb botons */
-  font-size: 18px; /* Mida de font unificada */
-  font-weight: 600;
-  box-shadow: none; /* Sense ombra */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  user-select: none; /* User-select unificat */
-  border: 0; /* Manté border: 0 del primer bloc */
-}
-
 .element-tornar {
   background-color: #2563eb; /* Color de fons unificat */
   color: #ffffff; /* Color de text unificat */
   padding: 14px 24px; /* Padding unificat */
   border-radius: 16px;
-  cursor: grab;
+  cursor: pointer; /* Canviat de 'grab' a 'pointer' per a un botó */
   font-size: 18px; /* Mida de font unificada */
   font-weight: 600;
   box-shadow: none; /* Sense ombra */
   transition: background-color 0.3s ease, transform 0.2s ease;
   user-select: none; /* User-select unificat */
   border: 0; /* Manté border: 0 del primer bloc */
+  text-decoration: none; /* Assegura que no tingui subratllat com un enllaç */
+  display: inline-block; /* Per poder aplicar padding/margins correctament a un <a> o <button> */
 }
 
-.element:hover {
+.element-tornar:hover {
   background-color: #1e40af; /* Color de fons hover unificat */
   transform: scale(1.05);
 }
 
-/* Estils per a la secció del joc (veritat_fals.html) */
+
+/* --- Estils per a la secció del joc (Veritat o Fals) --- */
+
+#joc-vf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px; /* Ample màxim per a tot el contenidor del joc */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.game-header-vf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 700px; /* Limita l'ample del header */
+  margin: 0 auto 30px auto; /* Centrat i amb marge inferior */
+  background-color: #ffffff; /* Fons pel header */
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Inclou padding en l'ample */
+}
+
 #crono-vf {
-  font-size: 28px;
-  font-weight: 700;
-  color: #2563eb;
-  background-color: #e0e7ff;
-  padding: 14px 32px;
-  border-radius: 16px;
+  font-size: 20px; /* Una mica més petit per no destacar tant */
+  font-weight: 600; /* Menys negreta */
+  color: #1a237e; /* Blau fosc, seriós */
+  background-color: #e3f2fd; /* Fons blau molt clar, subtil */
+  padding: 10px 20px; /* Padding ajustat */
+  border-radius: 12px; /* Lleugerament menys arrodonit */
   display: inline-block;
-  margin: 28px auto 40px auto;
-  min-width: 140px;
+  min-width: 120px;
   user-select: none;
-  letter-spacing: 2px;
+  letter-spacing: 1px; /* Espaiat de lletra reduït */
   text-transform: uppercase;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15); /* Ombra més subtil */
+}
+
+.score-progress-vf {
+  text-align: right; /* Alinea el text a la dreta */
 }
 
 #score-vf,
 #progress-vf {
-  font-size: 20px;
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 12px;
-  user-select: none;
+  margin: 0;
+  font-size: 22px; /* Més gran */
+  font-weight: 800; /* Més negreta */
+  color: #1e40af; /* Blau més fosc per destacar */
+}
+
+.game-content-panel-vf {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Ombra més pronunciada */
+  max-width: 700px; /* Ample màxim per al contingut principal */
+  width: 100%;
+  margin: 0 auto; /* Centrat */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra elements fills verticalment */
+  min-height: 400px; /* Alçada mínima per a la pantalla de joc */
+  justify-content: space-between; /* Distribueix l'espai entre els fills */
+  box-sizing: border-box;
 }
 
 #question-vf {
-  font-size: 28px; /* Mida més gran per a la pregunta de V/F */
-  font-weight: 700;
-  color: #1e40af;
-  margin-bottom: 30px;
-  user-select: none;
-  max-width: 700px; /* Augmenta l'ample màxim */
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.4; /* Millora la llegibilitat */
+  font-size: 32px; /* Encara més gran */
+  font-weight: 900; /* Més negreta */
+  color: #000000; /* Negre per a màxim contrast */
+  margin-bottom: 40px; /* Marge més gran per separar de les opcions */
+  max-width: 100%;
+  line-height: 1.4;
 }
 
 #options-vf {
   display: flex;
   justify-content: center;
-  gap: 25px; /* Augmenta l'espai entre els botons V/F */
-  margin-bottom: 24px;
+  gap: 25px; /* Espai entre els botons V/F */
+  margin-bottom: 30px; /* Marge més gran */
+  width: 100%; /* Ocupa tot l'ample disponible */
 }
 
 .option-vf {
-  background-color: #2563eb;
   border: none;
   border-radius: 15px; /* Vora més arrodonida */
   color: white;
@@ -182,43 +234,67 @@ h1 {
   font-size: 22px; /* Mida de font més gran */
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s ease, transform 0.15s ease,
-    box-shadow 0.2s ease;
-  min-width: 150px; /* Assegura una amplada mínima */
+  transition: background-color 0.3s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  min-width: 160px; /* Assegura una amplada mínima */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombra més pronunciada */
 }
 
-.option-vf:hover {
-  background-color: #1e40af;
+.option-vf:hover:not(.correct):not(.incorrect) { /* Aplica hover només si no està ja marcat */
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* Estils de color per VERITAT i FALS */
 .true-button {
-  background-color: #22c55e; /* Verd per a VERITAT */
+  background-color: #2563eb; /* Blau per defecte (abans de ser marcat) */
 }
-
-.true-button:hover {
-  background-color: #16a34a;
-}
-
 .false-button {
-  background-color: #ef4444; /* Vermell per a FALS */
+  background-color: #2563eb; /* Blau per defecte (abans de ser marcat) */
 }
 
-.false-button:hover {
-  background-color: #dc2626;
+
+/* Estils de feedback (verd/vermell) */
+.option-vf.correct {
+  background-color: #22c55e !important; /* Verd viu */
+  color: white !important;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.6) !important; /* Ombra de resplendor verda */
+  border: 2px solid #16a34a !important; /* Borde verd més fosc */
 }
+
+.option-vf.incorrect {
+  background-color: #ef4444 !important; /* Vermell viu */
+  color: white !important;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.6) !important; /* Ombra de resplendor vermella */
+  border: 2px solid #dc2626 !important; /* Borde vermell més fosc */
+  opacity: 0.7; /* Una mica de transparència per les incorrectes no seleccionades */
+}
+
+/* Desactivar efectes hover un cop s'ha respost */
+.option-vf.correct,
+.option-vf.incorrect {
+    cursor: default !important; /* Canvia el cursor a per defecte */
+    transform: none !important; /* Elimina l'efecte hover d'escala */
+}
+
 
 #feedback-vf {
-  font-size: 22px; /* Mida més gran */
+  font-size: 24px; /* Mida de font per al feedback */
   font-weight: 700;
-  min-height: 30px;
-  margin-bottom: 30px;
+  min-height: 40px;
+  margin-bottom: 25px;
   user-select: none;
 }
 
-/* Estils per a la secció de resultats (veritat_fals.html) */
+#feedback-vf.correct-text {
+    color: #16a34a; /* Verd per a "Correcte!" */
+}
+
+#feedback-vf.error-text {
+    color: #dc2626; /* Vermell per a "Incorrecte." */
+}
+
+
+/* Estils per a la secció de resultats */
 #resultat-vf {
   max-width: 480px;
   margin: 0 auto;
@@ -226,6 +302,9 @@ h1 {
   padding: 32px;
   border-radius: 16px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  display: flex; /* Utilitzem flexbox per organitzar el contingut */
+  flex-direction: column;
+  align-items: center; /* Centrem els elements */
 }
 
 #resultat-vf h2 {
@@ -239,43 +318,96 @@ h1 {
   color: #374151;
 }
 
-#resultat-vf button {
-  background-color: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 24px;
-  padding: 12px 36px;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-  margin-top: 10px; /* Ajusta el marge superior */
+#resultat-vf .element-tornar { /* S'apliquen els estils de .element-tornar */
+  margin-top: 10px;
 }
 
-#resultat-vf button:hover {
-  background-color: #1e40af;
+/* Media Queries per a responsivitat */
+@media (max-width: 768px) {
+  .game-header-vf {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  #crono-vf {
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+  .score-progress-vf {
+    text-align: center;
+    width: 100%;
+  }
+  #score-vf,
+  #progress-vf {
+    font-size: 18px;
+  }
+  .game-content-panel-vf {
+    padding: 20px;
+    min-height: 350px;
+  }
+  #question-vf {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+  #options-vf {
+    flex-direction: column; /* Posa els botons en columna en mòbils */
+    gap: 15px;
+  }
+  .option-vf {
+    padding: 14px 20px;
+    font-size: 18px;
+    min-width: unset; /* Reinicia l'amplada mínima */
+    width: 90%; /* Ocupa la major part de l'ample */
+  }
+  #feedback-vf {
+    font-size: 20px;
+    min-height: 35px;
+  }
 }
 
-/* Estils del botó "Tornar al Menú" (igual que al teu altre joc) */
-.game-control-button {
-  background-color: #6b7280; /* Un color gris per diferenciar-lo una mica */
-  color: #ffffff;
-  font-size: 16px; /* Una mica més petit que els botons de joc */
-  font-weight: 600;
-  padding: 10px 24px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  user-select: none;
-  text-transform: uppercase;
-  margin-top: 30px; /* Espai per sobre */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.game-control-button:hover {
-  background-color: #4b5563; /* Gris més fosc al passar el ratolí */
-  transform: scale(1.03);
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .game-header-vf {
+    padding: 10px;
+  }
+  #crono-vf {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+  #score-vf,
+  #progress-vf {
+    font-size: 16px;
+  }
+  .game-content-panel-vf {
+    padding: 15px;
+    min-height: 300px;
+  }
+  #question-vf {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .option-vf {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+  #feedback-vf {
+    font-size: 18px;
+    min-height: 30px;
+  }
+  #formulari-vf form {
+    padding: 20px;
+  }
+  #formulari-vf label {
+    flex-direction: column; /* Apila el label i el select en mòbils */
+    align-items: flex-start;
+    gap: 5px;
+  }
+  #formulari-vf select {
+    width: 100%;
+  }
 }

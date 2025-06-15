@@ -2,10 +2,10 @@
 <html lang="ca">
   <head>
     <meta charset="UTF-8" />
-    <title>MiniJoc - Veritat o Fals</title>
+    <title>ChemiQuiz: Veritat o Fals</title>
     <link rel="stylesheet" href="style.css" />
     <script src="jquery-3.7.1.min.js"></script>
-    </head>
+  </head>
   <body>
     <h1>ChemiQuiz: Veritat o Fals</h1>
 
@@ -30,21 +30,28 @@
 
         <button type="submit">Començar joc</button>
         <br /><br /><br />
-        <a href="../jocs" style="text-decoration: none;" class="element-tornar">TORNAR ALS JOCS</a>
+        <a href="../jocs" class="element-tornar" style="text-decoration: none;">TORNAR ALS JOCS</a>
       </form>
     </section>
 
     <section id="joc-vf" style="display: none">
-      <div id="crono-vf"></div>
-      <p id="score-vf">Puntuació: 0</p>
-      <p id="progress-vf">Pregunta 0 de 0</p>
-      <p id="question-vf">L'hidrogen és un metall alcalí.</p>
-      <div id="options-vf">
-        <button class="option-vf true-button">VERITAT</button>
-        <button class="option-vf false-button">FALS</button>
-      </div>
-      <p id="feedback-vf"></p>
-      <button id="tornarMenuJocVf" class="element-tornar">Tornar al Menú</button>
+        <div class="game-header-vf">
+            <div id="crono-vf"></div>
+            <div class="score-progress-vf">
+                <p id="score-vf">Puntuació: 0</p>
+                <p id="progress-vf">Pregunta 0 de 0</p>
+            </div>
+        </div>
+
+        <div class="game-content-panel-vf">
+            <p id="question-vf">L'hidrogen és un metall alcalí.</p>
+            <div id="options-vf">
+                <button class="option-vf true-button">VERITAT</button>
+                <button class="option-vf false-button">FALS</button>
+            </div>
+            <p id="feedback-vf"></p>
+            <button id="tornarMenuJocVf" class="element-tornar">Tornar al Menú</button>
+        </div>
     </section>
 
     <section id="resultat-vf" style="display: none">
@@ -54,5 +61,5 @@
     </section>
 
     <script src="script.js"></script>
-    </body>
+  </body>
 </html>
